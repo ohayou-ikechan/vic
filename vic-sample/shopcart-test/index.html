@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Vコマース　サンプル</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="jquery-1.11.3.min.js"></script>
+  <script src="layer.js"></script>
+  <script src="items.js"></script>
+  <script src="vic.js"></script>
+</head>
+<body>
+<form method="POST" action="http://www.diy-tool.com/fs/diy/ToCart.html">
+<input type="hidden" name="url" value="/fs/diy/use1_grab1/keiba-hlc-d14" />
+<input type="hidden" name="pagename" value="GoodsDetail" />
+<input type="hidden" name="goodsId" value="13065" />
+
+<div class="FS2_figure">
+<table border="0" cellspacing="2" cellpadding="0" class="FS2_figure_table">
+<tr>
+<td style="vertical-align:middle;" nowrap="nowrap" class="FS2_figure_table_td_figure">数量</td>
+<td style="vertical-align:middle;" class="FS2_figure_table_td_input_cnt"><input name="cnt" type="text" value="1" size="3" maxlength="16000" /></td>
+<td style="vertical-align:middle;" class="FS2_figure_table_td_cart_btn"><input type="submit" id="toCart" name="買い物カゴに入れる" /></td>
+</tr>
+</table>
+</div>
+</form>
+</body>
+</html>
