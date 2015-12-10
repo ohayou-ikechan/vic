@@ -10,6 +10,7 @@ function Vic (items, $elem) {
   this.$video_wrap = this.$video.parent();
   this.video = this.$video[0];
   this.pauseFlag = false;
+  this.started = false;
 
   this.init();
 
@@ -19,9 +20,19 @@ function Vic (items, $elem) {
 
 Vic.prototype.play = function(){
 
-  this.createItemObjects();
+  if ( this.started == false ) {
+
+    this.createItemObjects();
+    this.started = true;
+    this.pointerPlay_();
+
+  } else {
+
+    this.pauseFlag = false;
+
+  }
+
   this.video.play();
-  this.pointerPlay_();
 
 };
 
@@ -34,7 +45,7 @@ Vic.prototype.pause = function(){
 
 Vic.prototype.restart = function(){
 
-  this.play();
+  this.video.play();
   this.pauseFlag = false;
 
 };
@@ -78,6 +89,7 @@ Vic.prototype.pointerPlay_ = function(){
         doRender();
       }else{
 
+        me.started = false;
         $("#timeDisplay").text("");
 
       }
@@ -117,13 +129,6 @@ Vic.prototype.createItemObjects = function () {
     itemObj.data("width",width);
     itemObj.data("height",height);
 
-    ////オブジェクトをクリックした時の挙動
-    itemObj.on('click', function (evt) {
-
-      that.movieStop();
-      that.openModal(item);
-
-    });
 
     if(typeof item.tag !== "undefined"){
 
@@ -138,6 +143,14 @@ Vic.prototype.createItemObjects = function () {
     }
 
     item.$dom = itemObj;
+
+    ////オブジェクトをクリックした時の挙動
+    itemObj.on('click', function (evt) {
+
+      that.movieStop();
+      that.openModal(item);
+
+    });
 
   }
 
@@ -216,7 +229,7 @@ Vic.prototype.init = function () {
   });
 
   ////再開
-  this.$el.find('.pause').each(function () {
+  this.$el.find('.restart').each(function () {
 
     $(this).on('click', function () {
       that.restart();
@@ -224,6 +237,7 @@ Vic.prototype.init = function () {
 
   });
 
+  this.createItemObjects();
 };
 
 function initializeVic(){
