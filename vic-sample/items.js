@@ -10,6 +10,17 @@ var items = [
 			height: 100,
 			startTime: 0.5,
 			url: "http://amzn.to/1Si7qIT",
+            details: {
+                name: "プラントポット",
+                price: "5,600",
+                description: "ここに商品の説明が入ります",
+                image: {
+                    thumbnail: '',
+                    small: '',
+                    large: ''
+                },
+                item_id: 11
+            },
 			translateX: -160,
 			translateY: 0,
 			duration: 3,
@@ -32,6 +43,17 @@ var items = [
 			height: 160,
 			startTime: 4,
 			url: "http://amzn.to/1Si7qIT",
+            details: {
+                name: "プラントポット",
+                price: "5,600",
+                description: "ここに商品の説明が入ります",
+                image: {
+                    thumbnail: '',
+                    small: '',
+                    large: ''
+                },
+                item_id: 11
+            },
 			translateX: 250,
 			translateY: 0,
 			duration: 3,
@@ -55,6 +77,17 @@ var items = [
 			height: 315,
 			startTime: 7,
 			url: "http://amzn.to/1NLQM2D",
+            details: {
+                name: "ブックシェルフ",
+                price: "9,800",
+                description: "ここに商品の説明が入ります",
+                image: {
+                    thumbnail: '',
+                    small: '',
+                    large: ''
+                },
+                item_id: 11
+            },
 			translateX: 0,
 			translateY: 0,
 			duration: 3,
@@ -80,6 +113,17 @@ var items = [
 			height: 120,
 			startTime: 0,
 			url: "http://amzn.to/1Qu5der",
+            details: {
+                name: "プラントポット",
+                price: "5,600",
+                description: "ここに商品の説明が入ります",
+                image: {
+                    thumbnail: '',
+                    small: '',
+                    large: ''
+                },
+                item_id: 11
+            },
 			translateX: 0,
 			translateY: 0,
 			duration: 3,				
@@ -102,6 +146,17 @@ var items = [
 			height: 250,
 			startTime: 3.8,
 			url: "http://amzn.to/1ShM4KS",
+            details: {
+                name: "プラントポット",
+                price: "5,600",
+                description: "ここに商品の説明が入ります",
+                image: {
+                    thumbnail: '',
+                    small: '',
+                    large: ''
+                },
+                item_id: 11
+            },
 			translateX: -130,
 			translateY: 0,
 			duration: 1,
@@ -124,6 +179,17 @@ var items = [
 			height: 200,
 			startTime: 4.8,
 			url: "http://amzn.to/1ShM4KS",
+            details: {
+                name: "プラントポット",
+                price: "5,600",
+                description: "ここに商品の説明が入ります",
+                image: {
+                    thumbnail: '',
+                    small: '',
+                    large: ''
+                },
+                item_id: 11
+            },
 			translateX: 300,
 			translateY: 0,
 			duration: 2,
@@ -146,6 +212,17 @@ var items = [
 			height: 130,
 			startTime: 8,
 			url: "http://amzn.to/1Qu5der",
+            details: {
+                name: "プラントポット",
+                price: "5,600",
+                description: "ここに商品の説明が入ります",
+                image: {
+                    thumbnail: '',
+                    small: '',
+                    large: ''
+                },
+                item_id: 11
+            },
 			translateX: 0,
 			translateY: 150,
 			duration: 2,
@@ -168,6 +245,17 @@ var items = [
 			height: 133,
 			startTime: 13,
 			url: "http://amzn.to/1ShM4KS",
+            details: {
+                name: "プラントポット",
+                price: "5,600",
+                description: "ここに商品の説明が入ります",
+                image: {
+                    thumbnail: '',
+                    small: '',
+                    large: ''
+                },
+                item_id: 11
+            },
 			translateX: 0,
 			translateY: 200,
 			duration: 4,

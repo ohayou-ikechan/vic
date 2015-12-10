@@ -5,53 +5,45 @@
   <title>Vコマース　サンプル</title>
   <link rel="stylesheet" type="text/css" href="index.css">
   <script src="jquery-1.11.3.min.js"></script>
-  <script src="layer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="items.js"></script>
   <script src="vic.js"></script>
 </head>
 <body>
 <h1 class="title">ViC Premium Movies</h1>
+
 <div class="wrapper">
-	<div class="content">
-    <div class="vic">
-  		<video autobuffer class="video" id="video-0" onabort="log('abort');"
-    oncanplay="log('canplay');"
-    oncanplaythrough="log('canplaythrough');"
-    ondurationchange="log('durationchange');"
-    onemptied="log('emptied');"
-    onended="log('ended');"
-    onerror="log('error');"
-    onloadeddata="log('loadeddata');"
-    onloadedmetadata="log('loadedmetadata');"
-    onloadstart="log('loadstart');"
-    onpause="log('pause');"
-    onplay="log('play');"
-    onplaying="log('playing');"
-    onprogress="log('progress');"
-    onratechange="log('ratechange');"
-    onreadystatechange="log('readystatechange');"
-    onseeked="log('seeked');"
-    onseeking="log('seeking');"
-    onstalled="log('stalled');"
-    onsuspend="log('suspend');"
-    ontimeupdate="log('timeupdate');"
-    onvolumechange="log('volumechange');"
-    onwaiting="log('waiting');"
-    src="./sample02.mp4" width="630" height="350"></video>
-  		<div class="controls">
-  			<button id="videoPlay0">Play</button><button id="videoStop0">Stop</button><button id="videoRestart0">再開</button>
-  		</div>
-  		<div id="timeDisplay"></div>
-    	<div id='console'>
-    	</div>
-    </div>
-    <div class="vic">
-      <video autobuffer class="video" id="video-1" src="./sample01.mp4" width="630" height="350"></video>
-      <div class="controls">
-        <button id="videoPlay1">Play</button><button id="videoStop1">Stop</button><button id="videoRestart1">再開</button>
+  <div class="content">
+
+    <div class="vic" id="video-0">
+      <div class="video_wrap">
+        <video autobuffer class="video" src="./sample02.mp4" width="630" height="350"></video>
       </div>
+
+      <div class="controls">
+        <button class="play">Play</button><button class="pause">Stop</button><button class="restart">再開</button>
+      </div>
+
+      <div class="selected_item_wrap">
+
+      </div>
+
+      <div id="timeDisplay"></div>
+      <div id='console'></div>
     </div>
-	</div>
+
+
+    <div class="vic" id="video-1">
+      <div class="video_wrap">
+        <video autobuffer class="video" src="./sample01.mp4" width="630" height="350"></video>
+      </div>
+
+      <div class="controls">
+        <button class="play">Play</button><button class="pause">Stop</button><button class="restart">再開</button>
+      </div>
+
+    </div>
+  </div>
 </div>
 <div class="footer">
   All content, design, and layout are Copyright © 2015 ViC
