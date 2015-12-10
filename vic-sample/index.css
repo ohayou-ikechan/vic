@@ -75,3 +75,23 @@ body {
   border-top:8px solid transparent;
   border-left:8px solid #c72439;
 }
+
+.vic {
+    position : relative;
+}
+
+.video_wrap{
+    position: relative;
+    width: 630px;
+    height: 350px;
+}
+
+.modal {
+    position: absolute;
+    background: #fff;
+    width: 500px;
+    height: 300px;
+    z-index: 100;
+    top: 50px;
+    left: 320px;
+}
