@@ -78,8 +78,8 @@ var items = [
 			startTime: 7,
 			url: "http://amzn.to/1NLQM2D",
             details: {
-                name: "プラントポット",
-                price: "5,600",
+                name: "ブックシェルフ",
+                price: "9,800",
                 description: "ここに商品の説明が入ります",
                 image: {
                     thumbnail: '',

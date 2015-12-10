@@ -43,9 +43,6 @@ body {
   left: 300px; */
 }
 
-.video {
-	margin: 20px;
-}
 
 /*.itemPointer{
 	border-style: solid;
@@ -78,20 +75,25 @@ body {
 
 .vic {
     position : relative;
+    margin: 20px;
 }
 
 .video_wrap{
     position: relative;
     width: 630px;
     height: 350px;
+    margin: 0 auto;
 }
 
 .modal {
-    position: absolute;
-    background: #fff;
-    width: 500px;
-    height: 300px;
-    z-index: 100;
-    top: 50px;
-    left: 320px;
+  position: absolute;
+  background: #fff;
+  width: 500px;
+  height: 300px;
+  z-index: 100;
+  top: 50%;
+  margin-top: -150px;
+  left: 50%;
+  margin-left: -250px;
+  border-radius: 3px;
 }

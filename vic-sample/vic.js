@@ -8,9 +8,11 @@ function Vic (items, $elem) {
   this.$el = $elem;
   this.$video = this.$el.find('video');
   this.$video_wrap = this.$video.parent();
+  this.$selected_item_wrap = this.$el.find('.selected_item_wrap');
   this.video = this.$video[0];
   this.pauseFlag = false;
   this.started = false;
+
 
   this.init();
 
@@ -145,10 +147,10 @@ Vic.prototype.createItemObjects = function () {
     item.$dom = itemObj;
 
     ////オブジェクトをクリックした時の挙動
-    itemObj.on('click', function (evt) {
+    itemObj.on('click', item, function (evt) {
 
       that.movieStop();
-      that.openModal(item);
+      that.openModal(evt.data);
 
     });
 
@@ -202,7 +204,26 @@ Vic.prototype.openModal = function (item) {
 
 Vic.prototype.renderSelectedItems = function () {
 
-  debugger;
+  var selected_items = _.where(this.items, { selected: true });
+  var $node = '';
+  var that = this;
+
+  this.$selected_item_wrap.empty();
+  for ( var selected_item of selected_items ) {
+
+    $node = $('<div class="selected_item"><div class="image_wrap"> </div><span class="item_name">' + selected_item.details.name + '</span><div class="close">x</div></div>');
+
+    ////イベント
+    $node.find('.close').each(function () {
+      $(this).on('click', selected_item, function (evt) {
+        evt.data.selected = false;
+        that.renderSelectedItems();
+      });
+    });
+
+    that.$selected_item_wrap.append($node);
+
+  }
 
 };
 
@@ -249,5 +270,10 @@ function initializeVic(){
   }
 
 }
+
+
+window.onload = function () {
+  initializeVic();
+};
 
 
