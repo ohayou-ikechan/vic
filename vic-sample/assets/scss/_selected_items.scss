@@ -1,0 +1,19 @@
+.selected_item_wrap {
+  width: 630px;
+  margin: 0 auto;
+  background: #ddd;
+  .selected_item {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    .unselect {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+  .btn_area {
+    text-align: center;
+    margin: 10px;
+  }
+}

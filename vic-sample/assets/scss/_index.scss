@@ -1,0 +1,36 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  text-align: center;
+  width:100%;
+}
+
+.footer {
+  text-align: center;
+  width:100%;
+  bottom:0px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
+:window-inactive
+.content {
+  width: 80%;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  background-color : white;
+  text-align: center;
+}
+
+.layer {
+  background-color : red;
+}
+
+

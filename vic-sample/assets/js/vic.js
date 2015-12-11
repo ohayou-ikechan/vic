@@ -9,10 +9,17 @@ function Vic (items, $elem) {
   this.$video = this.$el.find('video');
   this.$video_wrap = this.$video.parent();
   this.$selected_item_wrap = this.$el.find('.selected_item_wrap');
+  this.controls = {
+    $play: this.$el.find('.controls .play'),
+    $pause: this.$el.find('.controls .pause')
+  };
   this.video = this.$video[0];
   this.pauseFlag = false;
   this.started = false;
-
+  this.templates = {
+    modal: _.template($('#vic_modal_contents').html()),
+    selected_item: _.template($('#vic_selected_item').html())
+  };
 
   this.init();
 
@@ -27,6 +34,7 @@ Vic.prototype.play = function(){
     this.createItemObjects();
     this.started = true;
     this.pointerPlay_();
+    this.controls.$play.hide();
 
   } else {
 
@@ -182,7 +190,7 @@ Vic.prototype.moveItem = function (itemObj) {
 Vic.prototype.openModal = function (item) {
 
   var target_obj = this;
-  var $dom_modal = $("<div class='modal'>" + item.details.name + "<br><button class='add_item'>リストに追加する</button><button class='close'>close</button></div>");
+  var $dom_modal = $(this.templates.modal({ item: item }));
   var $parent = this.$video_wrap;
 
   $dom_modal.find('.close').on('click', function (evt) {
@@ -205,23 +213,33 @@ Vic.prototype.openModal = function (item) {
 Vic.prototype.renderSelectedItems = function () {
 
   var selected_items = _.where(this.items, { selected: true });
-  var $node = '';
   var that = this;
+  var $btn_area = this.$selected_item_wrap.find('.btn_area');
+  var $selected_items_area = this.$selected_item_wrap.find('.selected_item_area');
 
-  this.$selected_item_wrap.empty();
+  $btn_area.empty();
+  if ( selected_items.length > 0 ) {
+    $btn_area.html('<div class="btn btn-default add_to_cart">購入手続きへ進む</div>');
+    $btn_area.find('.add_to_cart').on('click', function (evt) {
+    })
+  } else {
+    $btn_area.find('.btn_area').empty();
+  }
+
+  $selected_items_area.empty();
   for ( var selected_item of selected_items ) {
 
-    $node = $('<div class="selected_item"><div class="image_wrap"> </div><span class="item_name">' + selected_item.details.name + '</span><div class="close">x</div></div>');
+    var $node = $(this.templates.selected_item({ item: selected_item }));
 
     ////イベント
-    $node.find('.close').each(function () {
+    $node.find('.unselect').each(function () {
       $(this).on('click', selected_item, function (evt) {
         evt.data.selected = false;
         that.renderSelectedItems();
       });
     });
 
-    that.$selected_item_wrap.append($node);
+    $selected_items_area.append($node);
 
   }
 
@@ -230,6 +248,10 @@ Vic.prototype.renderSelectedItems = function () {
 Vic.prototype.init = function () {
 
   var that = this;
+
+  this.controls.$play.hide();
+  this.controls.$pause.hide();
+
   ////ボタンイベントの設定
   ////再生
   this.$el.find('.play').each(function () {
@@ -258,7 +280,31 @@ Vic.prototype.init = function () {
 
   });
 
+  this.$video_wrap.on('mouseenter', function () {
+    that.showControls();
+  });
+
+  this.$video_wrap.on('mouseleave', function () {
+    that.hideControls();
+  });
+
   this.createItemObjects();
+};
+
+Vic.prototype.showControls = function () {
+  if ( this.started ) {
+    this.controls.$pause.fadeIn();
+  } else {
+    this.controls.$play.fadeIn();
+  }
+};
+
+Vic.prototype.hideControls = function () {
+  if ( this.started ) {
+    this.controls.$pause.fadeOut();
+  } else {
+    this.controls.$play.fadeOut();
+  }
 };
 
 function initializeVic(){

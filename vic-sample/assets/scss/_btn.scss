@@ -1,0 +1,22 @@
+//ボタン系CSS
+///////////////////////////
+
+.btn{
+  cursor: pointer;
+
+  ////アイコン系のボタン
+  &.btn-icon {
+
+  }
+
+  ////通常のテキストボタン
+  ////デフォルト
+  &.btn-default {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+  }
+
+}

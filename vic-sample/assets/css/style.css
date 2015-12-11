@@ -1,0 +1,138 @@
+.btn {
+  cursor: pointer;
+}
+.btn.btn-default {
+  display: inline-block;
+  padding: 10px 30px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.modal {
+  position: absolute;
+  background: #fff;
+  width: 500px;
+  height: 300px;
+  top: 50%;
+  margin-top: -150px;
+  left: 50%;
+  margin-left: -250px;
+  overflow: hidden;
+}
+.modal .left_contents {
+  float: left;
+  margin: 20px;
+}
+.modal .right_contents {
+  overflow: hidden;
+}
+.modal .right_contents .add_item {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.modal .right_contents .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modal_wrap {
+  position: absolute;
+  width: 630px;
+  height: 350px;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.controls .play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-size: 100px;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+.controls .pause {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+}
+
+.selected_item_wrap {
+  width: 630px;
+  margin: 0 auto;
+  background: #ddd;
+}
+.selected_item_wrap .selected_item {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+.selected_item_wrap .selected_item .unselect {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.selected_item_wrap .btn_area {
+  text-align: center;
+  margin: 10px;
+}
+
+.vic {
+  position: relative;
+  margin: 20px;
+}
+.vic video {
+  object-fit: initial;
+}
+
+.video_wrap {
+  position: relative;
+  width: 630px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  text-align: center;
+  width: 100%;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
+
+:window-inactive
+.content {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: white;
+  text-align: center;
+}
+
+.layer {
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

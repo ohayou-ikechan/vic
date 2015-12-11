@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Vコマース　サンプル</title>
-  <link rel="stylesheet" type="text/css" href="index.css">
-  <script src="jquery-1.11.3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-  <script src="items.js"></script>
-  <script src="vic.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/font-awesome/css/font-awesome.min.css">
+  <script src="assets/js/jquery-1.11.3.min.js"></script>
+  <script src="assets/components/underscore.js"></script>
+  <script src="assets/datas/items.js"></script>
+  <script src="assets/js/vic.js"></script>
 </head>
 <body>
 <h1 class="title">ViC Premium Movies</h1>
@@ -17,15 +18,20 @@
 
     <div class="vic" id="video-0">
       <div class="video_wrap">
-        <video autobuffer class="video" src="./sample02.mp4" width="630" height="350"></video>
-      </div>
-
-      <div class="controls">
-        <button class="play">Play</button><button class="pause">Stop</button><button class="restart">再開</button>
+        <video autobuffer class="video" src="assets/videos/sample02.mp4" width="630" height="350"></video>
+        <div class="controls">
+          <i class="btn btn-ico play fa fa-lg fa-play-circle-o"></i>
+          <i class="btn btn-ico pause fa fa-lg fa-stop-circle-o"></i>
+        </div>
       </div>
 
       <div class="selected_item_wrap">
+        <div class="selected_item_area">
 
+        </div>
+        <div class="btn_area">
+
+        </div>
       </div>
 
       <div id="timeDisplay"></div>
@@ -35,11 +41,20 @@
 
     <div class="vic" id="video-1">
       <div class="video_wrap">
-        <video autobuffer class="video" src="./sample01.mp4" width="630" height="350"></video>
+        <video autobuffer class="video" src="assets/videos/sample01.mp4" width="630" height="350"></video>
+        <div class="controls">
+          <i class="play fa fa-lg fa-play-circle-o"></i>
+          <i class="pause fa fa-lg fa-stop-circle-o"></i>
+        </div>
       </div>
 
-      <div class="controls">
-        <button class="play">Play</button><button class="pause">Stop</button><button class="restart">再開</button>
+      <div class="selected_item_wrap">
+        <div class="selected_item_area">
+
+        </div>
+        <div class="btn_area">
+
+        </div>
       </div>
 
     </div>
@@ -48,5 +63,33 @@
 <div class="footer">
   All content, design, and layout are Copyright © 2015 ViC
 </div>
+
+<!-- 一旦今回はなれているuncderscorestemplateで。後々はReactに！ -->
+<script type="text/template" id="vic_modal_contents">
+  <div class="modal_wrap">
+    <div class="modal">
+      <div class="item_img left_contents">
+        <img src="http://placehold.it/150x220" alt="placeholder" width="150" height="220"/>
+      </div>
+      <div class="right_contents">
+        <h3 class="header-style01"><%= item.details.name %></h3>
+        <div class="price">¥<%= item.details.price %></div>
+        <div class="description">
+          <%= item.details.description %>
+        </div>
+        <div class="btn btn-default vic add_item">商品をカートに追加する</div>
+        <i class="btn btn-ico fa fa-lg fa-times-circle-o close"></i>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script type="text/template" id="vic_selected_item">
+  <div class="selected_item">
+    <img src="http://placehold.it/120x120" alt="placeholder" width="120" height="120"/>
+    <i class="btn btn-ico fa fa-lg fa-times-circle-o unselect"></i>
+  </div>
+</script>
+
 </body>
 </html>
