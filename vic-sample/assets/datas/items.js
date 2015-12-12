@@ -4,7 +4,7 @@ var items = [
 	[
 		{
 			itemName: "item1",
-			top: 190,
+			top: 170,
 			left: 260,
 			width: 75,
 			height: 100,
@@ -29,6 +29,8 @@ var items = [
 				css:{
 					"font-family": "Sans-serif",
 					color: "white",
+          fontWeight: "bold",
+          textShadow: "0 1px 1px rgba(0,0,0,.4)",
 					position: "absolute",
 					bottom: "-50px",
 					right: "-50px"
@@ -37,7 +39,7 @@ var items = [
 		},
 		{
 			itemName: "item2",
-			top: 190,
+			top: 150,
 			left: 0,
 			width: 165,
 			height: 160,
@@ -61,7 +63,9 @@ var items = [
 				text:"プラントポット<br>¥5600",
 				css:{
 					"font-family": "Sans-serif",
-					color: "blue",
+          color: "white",
+          fontWeight: "bold",
+          textShadow: "0 1px 1px rgba(0,0,0,.4)",
 					"font-size":"20px",
 					position: "absolute",
 					bottom: "-20px",
@@ -95,7 +99,9 @@ var items = [
 				text:"ブックシェルフ<br>¥9800",
 				css:{
 					"font-family": "Sans-serif",
-					color: "tomato",
+          color: "white",
+          fontWeight: "bold",
+          textShadow: "0 1px 1px rgba(0,0,0,.4)",
 					"font-size":"25px",
 					position: "absolute",
 					top: "10px"
@@ -126,7 +132,7 @@ var items = [
             },
 			translateX: 0,
 			translateY: 0,
-			duration: 3,				
+			duration: 3,
 			tag:{
 				text:"ナイキスニーカー<br>¥15000",
 				css:{
@@ -137,7 +143,7 @@ var items = [
 					bottom: "-10px"
 				}
 			}
-		},			
+		},
 		{
 			itemName: "t-shirt-1",
 			top: 40,
@@ -170,7 +176,7 @@ var items = [
 					bottom: "-10px"
 				}
 			}
-		},			
+		},
 		{
 			itemName: "t-shirt-2",
 			top: 40,
@@ -269,7 +275,7 @@ var items = [
 					bottom: "-10px"
 				}
 			}
-		}	
+		}
 	]
 ];
 // 	return items[i];

@@ -1,0 +1,26 @@
+
+@import "btn";
+@import "modal";
+@import "control";
+@import "selected_items";
+
+
+.vic {
+  position: relative;
+  margin: 20px;
+  video {
+    object-fit: initial;
+  }
+}
+
+.video_wrap{
+  position: relative;
+  width: 630px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+
+
+
+
