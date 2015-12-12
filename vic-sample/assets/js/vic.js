@@ -1,9 +1,8 @@
 "use strict";
 
-var fps = 40;
-
 function Vic (items, $elem) {
 
+  this.fps = 40;
   this.items = items;
   this.$el = $elem;
   this.$video = this.$el.find('video');
@@ -96,7 +95,7 @@ Vic.prototype.pointerPlay_ = function(){
         $("#timeDisplay").text("");
 
       }
-    }, 1000/fps);
+    }, 1000/me.fps);
   }
 };
 
@@ -117,8 +116,8 @@ Vic.prototype.createItemObjects = function () {
     var startTime = item.startTime;
     var endTime = item.startTime + item.duration;
     var url = item.url;
-    var distanceByFrameX = item.translateX / (item.duration * fps);
-    var distanceByFrameY = item.translateY / (item.duration * fps);
+    var distanceByFrameX = item.translateX / (item.duration * this.fps);
+    var distanceByFrameY = item.translateY / (item.duration * this.fps);
     var itemObj = $("<div>",{"id":itemName,"class":"itemPointer"});
     itemObj.css({"top":top,"left":left ,"position": "absolute","margin": "20px","width": width,"height":height});
     //Jqueryデータを持たせる
@@ -260,15 +259,6 @@ Vic.prototype.init = function () {
 
     $(this).on('click', function () {
       that.pause();
-    });
-
-  });
-
-  ////再開
-  this.$el.find('.restart').each(function () {
-
-    $(this).on('click', function () {
-      that.restart();
     });
 
   });
