@@ -33,7 +33,6 @@ Vic.prototype.play = function(){
     this.createItemObjects();
     this.started = true;
     this.pointerPlay_();
-    this.controls.$play.hide();
 
   } else {
 
@@ -41,14 +40,24 @@ Vic.prototype.play = function(){
 
   }
 
+  this.controls.$play.hide();
+  this.controls.$pause.fadeIn();
   this.video.play();
 
 };
 
 Vic.prototype.pause = function(){
 
+  if ( this.started == false ) {
+
+  } else {
+
+    this.pauseFlag = true;
+    this.controls.$pause.hide();
+    this.controls.$play.fadeIn();
+
+  }
   this.video.pause();
-  this.pauseFlag = true;
 
 };
 
@@ -271,6 +280,17 @@ Vic.prototype.init = function () {
     that.hideControls();
   });
 
+
+  /////ビデオのコントロールイベント
+  /////https://developer.mozilla.org/ja/docs/Web/Guide/Events/Media_events
+  this.video.addEventListener('playing', function ( evt ) { that.onPlaying(evt); });
+  this.video.addEventListener('ended', function ( evt ) {
+    that.started = false;
+    that.controls.$play.fadeIn();
+    that.controls.$pause.hide();
+    that.onEnded(evt);
+  });
+
   this.createItemObjects();
 };
 
@@ -288,6 +308,15 @@ Vic.prototype.hideControls = function () {
   } else {
     this.controls.$play.fadeOut();
   }
+};
+
+/////ビデオイベント
+Vic.prototype.onPlaying  = function (evt) {
+  console.log('playing');
+};
+
+Vic.prototype.onEnded  = function (evt) {
+  console.log('ended');
 };
 
 function initializeVic(){
