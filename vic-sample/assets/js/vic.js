@@ -53,13 +53,6 @@ Vic.prototype.pause = function(){
 
 };
 
-Vic.prototype.restart = function(){
-
-  this.video.play();
-  this.pauseFlag = false;
-
-};
-
 Vic.prototype.pointerPlay_ = function(){
 
   var me = this;
@@ -195,7 +188,7 @@ Vic.prototype.openModal = function (item) {
 
   $dom_modal.find('.close').on('click', function (evt) {
     $dom_modal.remove();
-    target_obj.restart();
+    target_obj.play();
   });
 
   $dom_modal.find('.add_item').on('click', function (evt) {
