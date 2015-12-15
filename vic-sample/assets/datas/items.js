@@ -4,28 +4,28 @@ var items = [
 	[
 		{
 			itemName: "item1",
-			top: 95,
-			left: 280,
-			width: 87,
+			top: 170,
+			left: 260,
+			width: 75,
 			height: 100,
-			startTime: 12.84,
-			url: "",
+			startTime: 0.5,
+			url: "http://amzn.to/1Si7qIT",
             details: {
-                name: "スキンモデリングアイズ",
-                price: "5,000",
-                description: "澄んだ色と光で肌そのものの美しさを際立たせるベージュを基調とした4色セットのアイシャドウ。<br>モデリングハイライトが色と肌を一体化させ立体感を生み出します。",
+                name: "プラントポット",
+                price: "5,600",
+                description: "ここに商品の説明が入ります",
                 image: {
-                    thumbnail: './assets/images/sample.png',
-                    small: './assets/images/sample.png',
-                    large: './assets/images/sample.png'
+                    thumbnail: '',
+                    small: '',
+                    large: ''
                 },
                 item_id: 11
             },
-			translateX: 0,
+			translateX: -160,
 			translateY: 0,
-			duration: 4.5,
+			duration: 3,
 			tag:{
-				text:"スキンモデリングアイズ<br>¥5000",
+				text:"プラントポット<br>¥5600",
 				css:{
 					"font-family": "Sans-serif",
 					color: "white",
@@ -39,90 +39,20 @@ var items = [
 		},
 		{
 			itemName: "item2",
-			top: 138,
-			left: 448,
-			width: 170,
-			height: 77,
-			startTime: 19,
+			top: 150,
+			left: 0,
+			width: 165,
+			height: 160,
+			startTime: 4,
 			url: "http://amzn.to/1Si7qIT",
             details: {
-                name: "スキンモデリングアイズ",
-                price: "5,000",
-                description: "澄んだ色と光で肌そのものの美しさを際立たせるベージュを基調とした4色セットのアイシャドウ。<br>モデリングハイライトが色と肌を一体化させ立体感を生み出します。",
+                name: "プラントポット",
+                price: "5,600",
+                description: "ここに商品の説明が入ります",
                 image: {
-                    thumbnail: './assets/images/sample.png',
-                    small: './assets/images/sample.png',
-                    large: './assets/images/sample.png'
-                },
-                item_id: 11
-            },
-			translateX: 0,
-			translateY: 0,
-			duration: 4,
-			tag:{
-				text:"スキンモデリングアイズ<br>¥5000",
-				css:{
-					"font-family": "Sans-serif",
-					color: "white",
-          fontWeight: "bold",
-          textShadow: "0 1px 1px rgba(0,0,0,.4)",
-					position: "absolute",
-					bottom: "-50px",
-					right: "-10px"
-				}
-			}
-		},
-		{
-			itemName: "item3",
-			top: 138,
-			left: 448,
-			width: 170,
-			height: 77,
-			startTime: 29.7,
-			url: "http://amzn.to/1Si7qIT",
-            details: {
-                name: "スキンモデリングアイズ",
-                price: "5,000",
-                description: "澄んだ色と光で肌そのものの美しさを際立たせるベージュを基調とした4色セットのアイシャドウ。<br>モデリングハイライトが色と肌を一体化させ立体感を生み出します。",
-                image: {
-                    thumbnail: './assets/images/sample.png',
-                    small: './assets/images/sample.png',
-                    large: './assets/images/sample.png'
-                },
-                item_id: 11
-            },
-			translateX: 0,
-			translateY: 0,
-			duration: 4,
-			tag:{
-				text:"スキンモデリングアイズ<br>¥5000",
-				css:{
-					"font-family": "Sans-serif",
-					color: "white",
-          fontWeight: "bold",
-          textShadow: "0 1px 1px rgba(0,0,0,.4)",
-					position: "absolute",
-					bottom: "-50px",
-					right: "-10px"
-				}
-			}
-		},
-		{
-			itemName: "item4",
-			top: 138,
-			left: 448,
-			width: 170,
-			height: 77,
-			startTime: 41,
-			url: "http://amzn.to/1Si7qIT",
-            details: {
-                name: "スキンモデリングアイズ",
-                price: "5,000",
-                description: "澄んだ色と光で肌そのものの美しさを際立たせるベージュを基調とした4色セットのアイシャドウ。<br>モデリングハイライトが色と肌を一体化させ立体感を生み出します。",
-                image: {
-                    thumbnail: './assets/images/sample.png',
-                    small: './assets/images/sample.png',
-                    large: './assets/images/sample.png'
+                    thumbnail: '',
+                    small: '',
+                    large: ''
                 },
                 item_id: 11
             },
@@ -130,56 +60,55 @@ var items = [
 			translateY: 0,
 			duration: 3,
 			tag:{
-				text:"スキンモデリングアイズ<br>¥5000",
+				text:"プラントポット<br>¥5600",
 				css:{
 					"font-family": "Sans-serif",
-					color: "white",
+          color: "white",
           fontWeight: "bold",
           textShadow: "0 1px 1px rgba(0,0,0,.4)",
+					"font-size":"20px",
 					position: "absolute",
-					bottom: "-50px",
-					right: "-10px"
+					bottom: "-20px",
+					right: "-100px"
 				}
 			}
 		},
 		{
-			itemName: "item4",
-			top: 138,
-			left: 448,
-			width: 170,
-			height: 77,
-			startTime: 49,
-			url: "http://amzn.to/1Si7qIT",
+			itemName: "item3",
+			top: 50,
+			left: 150,
+			width: 340,
+			height: 315,
+			startTime: 7,
+			url: "http://amzn.to/1NLQM2D",
             details: {
-                name: "スキンモデリングアイズ",
-                price: "5,000",
-                description: "澄んだ色と光で肌そのものの美しさを際立たせるベージュを基調とした4色セットのアイシャドウ。<br>モデリングハイライトが色と肌を一体化させ立体感を生み出します。",
+                name: "ブックシェルフ",
+                price: "9,800",
+                description: "ここに商品の説明が入ります",
                 image: {
-                    thumbnail: './assets/images/sample.png',
-                    small: './assets/images/sample.png',
-                    large: './assets/images/sample.png'
+                    thumbnail: '',
+                    small: '',
+                    large: ''
                 },
                 item_id: 11
             },
 			translateX: 0,
 			translateY: 0,
-			duration: 5,
+			duration: 3,
 			tag:{
-				text:"スキンモデリングアイズ<br>¥5000",
+				text:"ブックシェルフ<br>¥9800",
 				css:{
 					"font-family": "Sans-serif",
-					color: "white",
+          color: "white",
           fontWeight: "bold",
           textShadow: "0 1px 1px rgba(0,0,0,.4)",
+					"font-size":"25px",
 					position: "absolute",
-					bottom: "-50px",
-					right: "-10px"
+					top: "10px"
 				}
 			}
 		}
 	],
-
-
 	//サンプルビデオ 2
 	[
 		{
