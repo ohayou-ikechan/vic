@@ -135,4 +135,10 @@ body {
   background-color: red;
 }
 
+@font-face {
+    font-family: 'NotoSansCJKjp-Bold';
+    src: url('../fonts/NotoSansCJKjp-Bold.eot') format('eot'),
+         url('../fonts/NotoSansCJKjp-Bold.woff') format('woff'),
+         url('../fonts/NotoSansCJKjp-Bold.ttf') format('truetype');
+}
 /*# sourceMappingURL=style.css.map */

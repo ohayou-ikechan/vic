@@ -11,13 +11,13 @@ var items = [
 			startTime: 0.5,
 			url: "http://amzn.to/1Si7qIT",
             details: {
-                name: "プラントポット",
-                price: "5,600",
-                description: "ここに商品の説明が入ります",
+                name: "サンセベリア",
+                price: "1,980",
+                description: "説明：明るい場所～半日陰で育てます。日によく当てれば葉の色が濃く、大きな葉っぱに成長します。窓から少し離れた、部屋の中程でも管理できます。",
                 image: {
-                    thumbnail: '',
-                    small: '',
-                    large: ''
+                    thumbnail: './assets/images/02.jpg',
+                    small: './assets/images/02.jpg',
+                    large: './assets/images/02.jpg'
                 },
                 item_id: 11
             },
@@ -25,9 +25,9 @@ var items = [
 			translateY: 0,
 			duration: 3,
 			tag:{
-				text:"プラントポット<br>¥5600",
+				text:"観葉植物<br>¥1,980",
 				css:{
-					"font-family": "Sans-serif",
+					"font-family": "NotoSansCJKjp-Bold",
 					color: "white",
           fontWeight: "bold",
           textShadow: "0 1px 1px rgba(0,0,0,.4)",
@@ -46,13 +46,13 @@ var items = [
 			startTime: 4,
 			url: "http://amzn.to/1Si7qIT",
             details: {
-                name: "プラントポット",
-                price: "5,600",
-                description: "ここに商品の説明が入ります",
+                name: "サンセベリア",
+                price: "1,980",
+                description: "説明：明るい場所～半日陰で育てます。日によく当てれば葉の色が濃く、大きな葉っぱに成長します。窓から少し離れた、部屋の中程でも管理できます。",
                 image: {
-                    thumbnail: '',
-                    small: '',
-                    large: ''
+                    thumbnail: './assets/images/02.jpg',
+                    small: './assets/images/02.jpg',
+                    large: './assets/images/02.jpg'
                 },
                 item_id: 11
             },
@@ -60,9 +60,9 @@ var items = [
 			translateY: 0,
 			duration: 3,
 			tag:{
-				text:"プラントポット<br>¥5600",
+				text:"観葉植物<br>¥1,980",
 				css:{
-					"font-family": "Sans-serif",
+					"font-family": "NotoSansCJKjp-Bold",
           color: "white",
           fontWeight: "bold",
           textShadow: "0 1px 1px rgba(0,0,0,.4)",
@@ -82,13 +82,13 @@ var items = [
 			startTime: 7,
 			url: "http://amzn.to/1NLQM2D",
             details: {
-                name: "ブックシェルフ",
+                name: "クレエ 本立て A",
                 price: "9,800",
-                description: "ここに商品の説明が入ります",
+                description: "木とアイアンのシンプルなブックスタンド。A4サイズや雑誌サイズまでがぴったり収まるサイズです。コンパクトでちょっとしたスペースで使いやすいサイズにしました。",
                 image: {
-                    thumbnail: '',
-                    small: '',
-                    large: ''
+                    thumbnail: './assets/images/01.jpg',
+                    small: './assets/images/01.jpg',
+                    large: './assets/images/01.jpg'
                 },
                 item_id: 11
             },
@@ -96,9 +96,9 @@ var items = [
 			translateY: 0,
 			duration: 3,
 			tag:{
-				text:"ブックシェルフ<br>¥9800",
+				text:"ブックスタンド<br>¥2,700",
 				css:{
-					"font-family": "Sans-serif",
+					"font-family": "NotoSansCJKjp-Bold",
           color: "white",
           fontWeight: "bold",
           textShadow: "0 1px 1px rgba(0,0,0,.4)",
@@ -120,13 +120,13 @@ var items = [
 			startTime: 0,
 			url: "http://amzn.to/1Qu5der",
             details: {
-                name: "プラントポット",
-                price: "5,600",
-                description: "ここに商品の説明が入ります",
+                name: "ナイキ ルナテンポ",
+                price: "11,880",
+                description: "軽量性、サポート力のあるフィット感、足裏の柔らかいクッショニングが特長。ランニング中に抜群に滑らかな履き心地を実現します。",
                 image: {
-                    thumbnail: '',
-                    small: '',
-                    large: ''
+                    thumbnail: './assets/images/03.jpg',
+                    small: './assets/images/03.jpg',
+                    large: './assets/images/03.jpg'
                 },
                 item_id: 11
             },
@@ -134,9 +134,9 @@ var items = [
 			translateY: 0,
 			duration: 3,
 			tag:{
-				text:"ナイキスニーカー<br>¥15000",
+				text:"ランニングシューズ<br>¥11,880",
 				css:{
-					"font-family": "Sans-serif",
+					"font-family": "NotoSansCJKjp-Bold",
 					color: "white",
 					"font-size":"15px",
 					position: "absolute",
@@ -153,13 +153,13 @@ var items = [
 			startTime: 3.8,
 			url: "http://amzn.to/1ShM4KS",
             details: {
-                name: "プラントポット",
-                price: "5,600",
-                description: "ここに商品の説明が入ります",
+                name: "ナイキ DRI-FIT コントアー",
+                price: "4,860",
+                description: "最高のパフォーマンスのために必要不可欠な通気性を実現。メッシュニットが高い通気性を確保した体に沿うデザイン。体温が上昇しても快適なカバー力で軽快な動きが可能。",
                 image: {
-                    thumbnail: '',
-                    small: '',
-                    large: ''
+                    thumbnail: './assets/images/04.jpg',
+                    small: './assets/images/04.jpg',
+                    large: './assets/images/04.jpg'
                 },
                 item_id: 11
             },
@@ -167,9 +167,9 @@ var items = [
 			translateY: 0,
 			duration: 1,
 			tag:{
-				text:"ナイキTシャツ<br>¥15000",
+				text:"ランニングシャツ<br>¥4,860",
 				css:{
-					"font-family": "Sans-serif",
+					"font-family": "NotoSansCJKjp-Bold",
 					color: "pink",
 					"font-size":"15px",
 					position: "absolute",
@@ -186,13 +186,13 @@ var items = [
 			startTime: 4.8,
 			url: "http://amzn.to/1ShM4KS",
             details: {
-                name: "プラントポット",
-                price: "5,600",
-                description: "ここに商品の説明が入ります",
+                name: "ナイキ DRI-FIT コントアー",
+                price: "4,860",
+                description: "最高のパフォーマンスのために必要不可欠な通気性を実現。メッシュニットが高い通気性を確保した体に沿うデザイン。体温が上昇しても快適なカバー力で軽快な動きが可能。",
                 image: {
-                    thumbnail: '',
-                    small: '',
-                    large: ''
+                    thumbnail: './assets/images/04.jpg',
+                    small: './assets/images/04.jpg',
+                    large: './assets/images/04.jpg'
                 },
                 item_id: 11
             },
@@ -202,7 +202,7 @@ var items = [
 			tag:{
 				text:"ナイキTシャツ<br>¥15000",
 				css:{
-					"font-family": "Sans-serif",
+					"font-family": "NotoSansCJKjp-Bold",
 					color: "pink",
 					"font-size":"15px",
 					position: "absolute",
@@ -219,13 +219,13 @@ var items = [
 			startTime: 8,
 			url: "http://amzn.to/1Qu5der",
             details: {
-                name: "プラントポット",
-                price: "5,600",
-                description: "ここに商品の説明が入ります",
+                name: "ナイキ ルナテンポ",
+                price: "11,880",
+                description: "軽量性、サポート力のあるフィット感、足裏の柔らかいクッショニングが特長。ランニング中に抜群に滑らかな履き心地を実現します。",
                 image: {
-                    thumbnail: '',
-                    small: '',
-                    large: ''
+                    thumbnail: './assets/images/03.jpg',
+                    small: './assets/images/03.jpg',
+                    large: './assets/images/03.jpg'
                 },
                 item_id: 11
             },
@@ -233,9 +233,9 @@ var items = [
 			translateY: 150,
 			duration: 2,
 			tag:{
-				text:"ナイキスニーカー<br>¥15000",
+				text:"ランニングシューズ<br>¥11,880",
 				css:{
-					"font-family": "Sans-serif",
+					"font-family": "NotoSansCJKjp-Bold",
 					color: "pink",
 					"font-size":"15px",
 					position: "absolute",
@@ -252,13 +252,13 @@ var items = [
 			startTime: 13,
 			url: "http://amzn.to/1ShM4KS",
             details: {
-                name: "プラントポット",
-                price: "5,600",
-                description: "ここに商品の説明が入ります",
+                name: "ナイキ DRI-FIT コントアー",
+                price: "4,860",
+                description: "最高のパフォーマンスのために必要不可欠な通気性を実現。メッシュニットが高い通気性を確保した体に沿うデザイン。体温が上昇しても快適なカバー力で軽快な動きが可能。",
                 image: {
-                    thumbnail: '',
-                    small: '',
-                    large: ''
+                    thumbnail: './assets/images/04.jpg',
+                    small: './assets/images/04.jpg',
+                    large: './assets/images/04.jpg'
                 },
                 item_id: 11
             },
@@ -268,7 +268,7 @@ var items = [
 			tag:{
 				text:"ナイキTシャツ<br>¥15000",
 				css:{
-					"font-family": "Sans-serif",
+					"font-family": "NotoSansCJKjp-Bold",
 					color: "white",
 					"font-size":"15px",
 					position: "absolute",
