@@ -30,7 +30,7 @@ Vic.prototype.play = function(){
 
   if ( this.started == false ) {
 
-    this.createItemObjects();
+    //this.createItemObjects();
     this.started = true;
     this.pointerPlay_();
 
@@ -76,9 +76,9 @@ Vic.prototype.pointerPlay_ = function(){
 
         if(!me.pauseFlag){
 
-          for(var item of items){
+          for(var i=0; items.length > i; i++){
 
-            var itemObj = item.$dom;
+            var itemObj = items[i].$dom;
 
             if(itemObj.data("startTime") < vid.currentTime && !itemObj.data("added")){
 
@@ -113,20 +113,21 @@ Vic.prototype.pointerPlay_ = function(){
 Vic.prototype.createItemObjects = function () {
 
   var that = this;
+  var items = this.items;
 
-  for(var item of this.items){
+  for(var i=0; items.length > i; i++){
 
-    var itemName = item.itemName;
+    var itemName = items[i].itemName;
     //console.log(item.top + ":----------------------:" + videoObj.position().top);
-    var top = item.top;
-    var left = item.left;
-    var width = item.width;
-    var height = item.height;
-    var startTime = item.startTime;
-    var endTime = item.startTime + item.duration;
-    var url = item.url;
-    var distanceByFrameX = item.translateX / (item.duration * this.fps);
-    var distanceByFrameY = item.translateY / (item.duration * this.fps);
+    var top = items[i].top;
+    var left = items[i].left;
+    var width = items[i].width;
+    var height = items[i].height;
+    var startTime = items[i].startTime;
+    var endTime = items[i].startTime + items[i].duration;
+    var url = items[i].url;
+    var distanceByFrameX = items[i].translateX / (items[i].duration * this.fps);
+    var distanceByFrameY = items[i].translateY / (items[i].duration * this.fps);
     var itemObj = $("<div>",{"id":itemName,"class":"itemPointer"});
     itemObj.css({"top":top,"left":left ,"position": "absolute","margin": "20px","width": width,"height":height});
     //Jqueryデータを持たせる
@@ -141,26 +142,30 @@ Vic.prototype.createItemObjects = function () {
     itemObj.data("height",height);
 
 
-    if(typeof item.tag !== "undefined"){
+    if(typeof items[i].tag !== "undefined"){
 
-      var div = $("<div>").css(item.tag.css);
+      var div = $("<div>").css(items[i].tag.css);
 
-      if(item.tag.text){
-        div.append($("<p>" + item.tag.text + "</p>"));
+      if(items[i].tag.text){
+        div.append($("<p>" + items[i].tag.text + "</p>"));
       }
 
       itemObj.append(div);
 
     }
 
-    item.$dom = itemObj;
+    items[i].$dom = itemObj;
 
     ////オブジェクトをクリックした時の挙動
-    itemObj.on('click', item, function (evt) {
+    itemObj.on('click', items[i], function (evt) {
 
       that.movieStop();
       that.openModal(evt.data);
 
+    });
+
+    itemObj.on('mouseover', function (evt) {
+      $(this).css({cursor:"pointer"});
     });
 
   }
@@ -228,13 +233,13 @@ Vic.prototype.renderSelectedItems = function () {
   }
 
   $selected_items_area.empty();
-  for ( var selected_item of selected_items ) {
+  for ( var i =0; selected_items.length > i; i++ ) {
 
-    var $node = $(this.templates.selected_item({ item: selected_item }));
+    var $node = $(this.templates.selected_item({ item: selected_items[i] }));
 
     ////イベント
     $node.find('.unselect').each(function () {
-      $(this).on('click', selected_item, function (evt) {
+      $(this).on('click', selected_items[i], function (evt) {
         evt.data.selected = false;
         that.renderSelectedItems();
       });
@@ -332,6 +337,27 @@ function initializeVic(){
 
 window.onload = function () {
   initializeVic();
+
+
+  $(document).mousemove(function(e){
+     mouseX = e.pageX;
+     mouseY = e.pageY; 
+  });
+
+  var pointer = $('<div>',{class:"mouse",text:"mouse"});
+  $(".content").append(pointer);
+  var xp = 40, yp = 40;
+  var loop = setInterval(function(){
+
+      // change 12 to alter damping higher is slower
+      xp += (mouseX - xp) / 12 -1;
+      yp += (mouseY - yp) / 12 -1;
+      pointer.css({left:xp, top:yp});
+
+  }, 30); 
+
 };
 
+  var mouseX = 0,
+      mouseY = 0;
 

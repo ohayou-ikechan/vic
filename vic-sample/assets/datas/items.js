@@ -170,7 +170,7 @@ var items = [
 				text:"ランニングシャツ<br>¥4,860",
 				css:{
 					"font-family": "NotoSansCJKjp-Bold",
-					color: "pink",
+					color: "white",
 					"font-size":"15px",
 					position: "absolute",
 					bottom: "-10px"
@@ -200,10 +200,10 @@ var items = [
 			translateY: 0,
 			duration: 2,
 			tag:{
-				text:"ナイキTシャツ<br>¥15000",
+				text:"ランニングシャツ<br>¥4,860",
 				css:{
 					"font-family": "NotoSansCJKjp-Bold",
-					color: "pink",
+					color: "white",
 					"font-size":"15px",
 					position: "absolute",
 					bottom: "-10px"
@@ -236,7 +236,7 @@ var items = [
 				text:"ランニングシューズ<br>¥11,880",
 				css:{
 					"font-family": "NotoSansCJKjp-Bold",
-					color: "pink",
+					color: "white",
 					"font-size":"15px",
 					position: "absolute",
 					top: "-20px"
@@ -266,7 +266,7 @@ var items = [
 			translateY: 200,
 			duration: 4,
 			tag:{
-				text:"ナイキTシャツ<br>¥15000",
+				text:"ランニングシャツ<br>¥4,860",
 				css:{
 					"font-family": "NotoSansCJKjp-Bold",
 					color: "white",
