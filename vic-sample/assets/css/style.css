@@ -137,7 +137,12 @@ body {
 
 .mouse{
     position: absolute;
-    padding:10px;
+    pointer-events: none;
+}
+
+.itemPointer{
+  background: rgba(0,0,0,.5);
+  cursor: pointer;
 }
 
 @font-face {

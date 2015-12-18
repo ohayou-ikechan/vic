@@ -19,6 +19,7 @@ function Vic (items, $elem) {
     modal: _.template($('#vic_modal_contents').html()),
     selected_item: _.template($('#vic_selected_item').html())
   };
+  this.$pointer = $(".mouse");
 
   this.init();
 
@@ -166,18 +167,15 @@ Vic.prototype.createItemObjects = function () {
 
     itemObj.bind({
       'mouseover': function (evt) {
+
         console.log("enter");
-        $(this).css({cursor:"pointer"});
-        if(!that.hasOwnProperty("$pointer")){
-          that.showPointer();
-        }
+        that.$pointer.fadeIn();
+
       },
       'mouseout': function (evt) {
-        console.log("out");
-        $(this).css({cursor:"pointer"});
-        if(that.hasOwnProperty("$pointer")){
-          that.hidePointer();
-        }
+
+        that.$pointer.fadeOut();
+
       }
     });
 
@@ -290,11 +288,11 @@ Vic.prototype.init = function () {
 
   });
 
-  this.$video_wrap.on('mouseenter', function () {
+  this.$video_wrap.on('mouseenter', function (evt) {
     that.showControls();
   });
 
-  this.$video_wrap.on('mouseleave', function () {
+  this.$video_wrap.on('mouseleave', function (evt) {
     that.hideControls();
   });
 
@@ -308,6 +306,16 @@ Vic.prototype.init = function () {
     that.controls.$pause.hide();
     that.onEnded(evt);
   });
+
+  ////ポインターの制御
+  $(document).off('mousemove');
+
+  this.$pointer.hide();
+
+  $(document).on('mousemove', function (evt) {
+    that.followPointer(evt);
+  });
+
 
   this.createItemObjects();
 };
@@ -337,38 +345,16 @@ Vic.prototype.onEnded  = function (evt) {
   console.log('ended');
 };
 
-Vic.prototype.showPointer = function(){
-  var that = this;
-  var mouseX = 0,
-      mouseY = 0;
+Vic.prototype.followPointer = function (evt) {
 
-  $(document).mousemove(function(e){
-     mouseX = e.pageX - 20;
-     mouseY = e.pageY - 20; 
-  });
-
-  this.$pointer = $('<img>',{class:"mouse",src:"./assets/images/pointer.gif",width:"50px",height:"50px"});
-  $(".content").append(this.$pointer);
+  var mouseX = evt.pageX - 13;
+  var mouseY = evt.pageY - 18;
   var xp = 50, yp = 50;
-  this.loop = setInterval(function(){
+  console.log('mouse is moving');
+  xp += (mouseX - xp);
+  yp += (mouseY - yp);
+  this.$pointer.css({left:xp, top:yp});
 
-      // change 12 to alter damping higher is slower
-      // xp += (mouseX - xp) / 12 -1;
-      // yp += (mouseY - yp) / 12 -1;
-      xp += (mouseX - xp);
-      yp += (mouseY - yp);
-      that.$pointer.css({left:xp, top:yp});
-
-  }, 30); 
-};
-
-Vic.prototype.hidePointer = function(){
-  var that = this;
-  clearInterval(this.loop);
-  this.$pointer.fadeOut(function(){
-    that.$pointer.remove();
-    delete that.$pointer;
-  });
 };
 
 function initializeVic(){
@@ -384,7 +370,6 @@ function initializeVic(){
 
 window.onload = function () {
   initializeVic();
-
 };
 
 
