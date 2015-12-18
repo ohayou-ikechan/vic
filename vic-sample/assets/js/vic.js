@@ -30,7 +30,7 @@ Vic.prototype.play = function(){
 
   if ( this.started == false ) {
 
-    //this.createItemObjects();
+    this.createItemObjects();
     this.started = true;
     this.pointerPlay_();
 
@@ -164,8 +164,21 @@ Vic.prototype.createItemObjects = function () {
 
     });
 
-    itemObj.on('mouseover', function (evt) {
-      $(this).css({cursor:"pointer"});
+    itemObj.bind({
+      'mouseover': function (evt) {
+        console.log("enter");
+        $(this).css({cursor:"pointer"});
+        if(!that.hasOwnProperty("$pointer")){
+          that.showPointer();
+        }
+      },
+      'mouseout': function (evt) {
+        console.log("out");
+        $(this).css({cursor:"pointer"});
+        if(that.hasOwnProperty("$pointer")){
+          that.hidePointer();
+        }
+      }
     });
 
   }
@@ -324,6 +337,40 @@ Vic.prototype.onEnded  = function (evt) {
   console.log('ended');
 };
 
+Vic.prototype.showPointer = function(){
+  var that = this;
+  var mouseX = 0,
+      mouseY = 0;
+
+  $(document).mousemove(function(e){
+     mouseX = e.pageX - 20;
+     mouseY = e.pageY - 20; 
+  });
+
+  this.$pointer = $('<img>',{class:"mouse",src:"./assets/images/pointer.gif",width:"50px",height:"50px"});
+  $(".content").append(this.$pointer);
+  var xp = 50, yp = 50;
+  this.loop = setInterval(function(){
+
+      // change 12 to alter damping higher is slower
+      // xp += (mouseX - xp) / 12 -1;
+      // yp += (mouseY - yp) / 12 -1;
+      xp += (mouseX - xp);
+      yp += (mouseY - yp);
+      that.$pointer.css({left:xp, top:yp});
+
+  }, 30); 
+};
+
+Vic.prototype.hidePointer = function(){
+  var that = this;
+  clearInterval(this.loop);
+  this.$pointer.fadeOut(function(){
+    that.$pointer.remove();
+    delete that.$pointer;
+  });
+};
+
 function initializeVic(){
 
   for(var i=0; items.length > i; i++){
@@ -338,26 +385,7 @@ function initializeVic(){
 window.onload = function () {
   initializeVic();
 
-
-  $(document).mousemove(function(e){
-     mouseX = e.pageX;
-     mouseY = e.pageY; 
-  });
-
-  var pointer = $('<div>',{class:"mouse",text:"mouse"});
-  $(".content").append(pointer);
-  var xp = 40, yp = 40;
-  var loop = setInterval(function(){
-
-      // change 12 to alter damping higher is slower
-      xp += (mouseX - xp) / 12 -1;
-      yp += (mouseY - yp) / 12 -1;
-      pointer.css({left:xp, top:yp});
-
-  }, 30); 
-
 };
 
-  var mouseX = 0,
-      mouseY = 0;
+
 
