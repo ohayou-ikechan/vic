@@ -173,7 +173,7 @@ Vic.prototype.createItemObjects = function () {
 
       },
       'mouseout': function (evt) {
-
+        console.log("out");
         that.$pointer.fadeOut();
 
       }
@@ -350,7 +350,7 @@ Vic.prototype.followPointer = function (evt) {
   var mouseX = evt.pageX - 13;
   var mouseY = evt.pageY - 18;
   var xp = 50, yp = 50;
-  console.log('mouse is moving');
+  // console.log('mouse is moving');
   xp += (mouseX - xp);
   yp += (mouseY - yp);
   this.$pointer.css({left:xp, top:yp});
