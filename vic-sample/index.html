@@ -18,7 +18,7 @@
 
     <div class="vic" id="video-0">
       <div class="video_wrap">
-        <video preload="auto" class="video" src="assets/videos/sample002.mp4" poster="assets/images/poster01.png" width="630" height="350"></video>
+        <video preload="none" class="video" src="assets/videos/sample002.mp4" poster="assets/images/poster01.png" width="640" height="360"></video>
         <div class="controls">
           <i class="btn btn-ico play fa fa-lg fa-play-circle-o"></i>
           <i class="btn btn-ico pause fa fa-lg fa-stop-circle-o"></i>
@@ -41,7 +41,7 @@
 
     <div class="vic" id="video-1">
       <div class="video_wrap">
-        <video preload="auto" class="video" src="assets/videos/sample001.mp4" poster="assets/images/poster02.png" width="630" height="350"></video>
+        <video preload="none" class="video" src="assets/videos/sample001.mp4" poster="assets/images/poster02.png" width="640" height="360"></video>
         <div class="controls">
           <i class="play fa fa-lg fa-play-circle-o"></i>
           <i class="pause fa fa-lg fa-stop-circle-o"></i>
@@ -68,16 +68,18 @@
 <script type="text/template" id="vic_modal_contents">
   <div class="modal_wrap">
     <div class="modal">
-      <div class="item_img left_contents">
-        <img src="<%= item.details.image.small %>" alt="placeholder" width="150" height="220"/>
+      <div class="left_contents">
+        <div class="item_img left_contents">
+          <img src="<%= item.details.image.small %>" alt="placeholder" width="200" height="200"/>
+        </div>
       </div>
       <div class="right_contents">
         <h3 class="header-style01"><%= item.details.name %></h3>
         <div class="price">¥<%= item.details.price %></div>
+        <div class="btn btn-default vic add_item">カートに入れる</div>
         <div class="description">
           <%= item.details.description %>
         </div>
-        <div class="btn btn-default vic add_item">商品をカートに追加する</div>
         <i class="btn btn-ico fa fa-lg fa-times-circle-o close"></i>
       </div>
     </div>
