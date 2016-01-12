@@ -236,7 +236,7 @@ Vic.prototype.renderSelectedItems = function () {
 
   $btn_area.empty();
   if ( selected_items.length > 0 ) {
-    $btn_area.html('<div class="btn btn-default add_to_cart"><a href="http://www.diy-tool.com/fs/diy/ShoppingCart.html" target="_blank">購入手続きへ進む</a></div>');
+    $btn_area.html('<div class="btn btn-default add_to_cart"><a href='+ shopCartConf.cartUrl +' target="_blank">購入手続きへ進む</a></div>');
     $btn_area.find('.add_to_cart').on('click', function (evt) {
     })
   } else {

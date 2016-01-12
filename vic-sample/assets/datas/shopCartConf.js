@@ -1,6 +1,7 @@
 var shopCartConf = {
 	method: "POST",
-	action: "http://www.diy-tool.com/fs/diy/ToCart.html",
+	action: "http://www.meetscal.parco.jp/cart_index.html",
 	style : "display:none;",
-	target : "nodisp"
+	target : "nodisp",
+	cartUrl: "http://www.meetscal.parco.jp/cart_index.html"
 };

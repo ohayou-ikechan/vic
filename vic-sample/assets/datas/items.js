@@ -37,10 +37,10 @@ var items = [
 				}
 			},
 			cartProps:{
-				url:"/fs/diy/x01-6528",
-				pagename:"GoodsDetail",
-				goodsId:"941991",
-				cnt:"1"
+				item_cd:"MK_2132",
+				ITEMPROPERTY_CD:"C0034-S001",
+				request:"insert",
+				CART_AMOUNT:"1"
 			}
 		},
 		{
@@ -79,10 +79,10 @@ var items = [
 				}
 			},
 			cartProps:{
-				url:"/fs/diy/x01-6528",
-				pagename:"GoodsDetail",
-				goodsId:"941991",
-				cnt:"1"
+				item_cd:"MK_2132",
+				ITEMPROPERTY_CD:"C0034-S001",
+				request:"insert",
+				CART_AMOUNT:"1"
 			}
 		},
 		{
@@ -120,10 +120,10 @@ var items = [
 				}
 			},
 			cartProps:{
-				url:"/fs/diy/z02-0309",
-				pagename:"GoodsDetail",
-				goodsId:"130047",
-				cnt:"1"
+				item_cd:"4530956523057",
+				ITEMPROPERTY_CD:"C0237-S012",
+				request:"insert",
+				CART_AMOUNT:"1"
 			}
 		}
 	],
