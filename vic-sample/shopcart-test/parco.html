@@ -1,0 +1,25 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Vコマース　サンプル</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://www.meetscal.parco.jp/client_info/PARCO/view/userweb/js/ebisu_lib.js"></script>
+</head>
+<body>
+<script language="JavaScript">
+<!--
+function putItemPropertyToCart(itemcd, propcd, request, paramUrl, obj) {
+	var val = Number(eb$('#CART_AMOUNT').val()) || 1;  // 未設定なら 1
+	eb$('<form/>', {action : paramUrl, method : 'post'})
+		.append(eb$('<input/>', {type : 'hidden',name : 'request',value : request}))
+		.append(eb$('<input/>', {type : 'hidden',name : 'item_cd',value : itemcd}))
+		.append(eb$('<input/>', {type : 'hidden',name : 'ITEMPROPERTY_CD',value : propcd}))
+		.append(eb$('<input/>', {type : 'hidden',name : 'CART_AMOUNT',value : "'" + val + "'"}))
+		.appendTo(document.body).submit();
+}
+-->
+</script>
+<input onclick='putItemPropertyToCart("MK_2132", "C0034-S001", "insert", "http://www.meetscal.parco.jp/cart_index.html", eb$(this).parent()); return false;' type="submit" value="カートに入れる" />
+</body>
+</html>
+
