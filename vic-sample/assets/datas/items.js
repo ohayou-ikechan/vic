@@ -29,12 +29,18 @@ var items = [
 				css:{
 					"font-family": "NotoSansCJKjp-Bold",
 					color: "white",
-          fontWeight: "bold",
-          textShadow: "0 1px 1px rgba(0,0,0,.4)",
+					fontWeight: "bold",
+					textShadow: "0 1px 1px rgba(0,0,0,.4)",
 					position: "absolute",
 					bottom: "-50px",
 					right: "-50px"
 				}
+			},
+			cartProps:{
+				url:"/fs/diy/x01-6528",
+				pagename:"GoodsDetail",
+				goodsId:"941991",
+				cnt:"1"
 			}
 		},
 		{
@@ -63,14 +69,20 @@ var items = [
 				text:"観葉植物<br>¥1,980",
 				css:{
 					"font-family": "NotoSansCJKjp-Bold",
-          color: "white",
-          fontWeight: "bold",
-          textShadow: "0 1px 1px rgba(0,0,0,.4)",
+					color: "white",
+					fontWeight: "bold",
+					textShadow: "0 1px 1px rgba(0,0,0,.4)",
 					"font-size":"20px",
 					position: "absolute",
 					bottom: "-20px",
 					right: "-100px"
 				}
+			},
+			cartProps:{
+				url:"/fs/diy/x01-6528",
+				pagename:"GoodsDetail",
+				goodsId:"941991",
+				cnt:"1"
 			}
 		},
 		{
@@ -99,13 +111,19 @@ var items = [
 				text:"ブックスタンド<br>¥2,700",
 				css:{
 					"font-family": "NotoSansCJKjp-Bold",
-          color: "white",
-          fontWeight: "bold",
-          textShadow: "0 1px 1px rgba(0,0,0,.4)",
+					color: "white",
+					fontWeight: "bold",
+					textShadow: "0 1px 1px rgba(0,0,0,.4)",
 					"font-size":"25px",
 					position: "absolute",
 					top: "10px"
 				}
+			},
+			cartProps:{
+				url:"/fs/diy/z02-0309",
+				pagename:"GoodsDetail",
+				goodsId:"130047",
+				cnt:"1"
 			}
 		}
 	],

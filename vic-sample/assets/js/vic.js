@@ -236,7 +236,7 @@ Vic.prototype.renderSelectedItems = function () {
 
   $btn_area.empty();
   if ( selected_items.length > 0 ) {
-    $btn_area.html('<div class="btn btn-default add_to_cart">購入手続きへ進む</div>');
+    $btn_area.html('<div class="btn btn-default add_to_cart"><a href="http://www.diy-tool.com/fs/diy/ShoppingCart.html" target="_blank">購入手続きへ進む</a></div>');
     $btn_area.find('.add_to_cart').on('click', function (evt) {
     })
   } else {
@@ -362,6 +362,21 @@ function initializeVic(){
   for(var i=0; items.length > i; i++){
 
     new Vic(items[i],$("#video-" + i));
+
+    //カート用隠しフォーム追加
+    for(var j=0; items[i].length > j; j++){
+      var form = $("<form>");
+      shopCartConf.id = "form-" + items[i][j].itemName;
+      form.attr(shopCartConf);
+      if(items[i][j].cartProps){
+        $.each(items[i][j].cartProps,function(key, value){
+          form.append($("<input>").attr({name:key,value:value}));
+        });
+      }
+      form.append($("<input>").attr({type:"submit",name:"買い物カゴに入れる"}));
+      $("body").append(form);
+    }
+    $("body").append($('<iframe name="nodisp" id="naiyo" style="display:none">'));
 
   }
 

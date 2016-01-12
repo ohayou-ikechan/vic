@@ -8,6 +8,7 @@
   <script src="assets/js/jquery-1.11.3.min.js"></script>
   <script src="assets/components/underscore.js"></script>
   <script src="assets/datas/items.js"></script>
+  <script src="assets/datas/shopCartConf.js"></script>
   <script src="assets/js/vic.js"></script>
 </head>
 <body>
@@ -63,6 +64,30 @@
 <div class="footer">
   All content, design, and layout are Copyright © 2015 ViC
 </div>
+<!--
+<form id="form-1" method="POST" action="http://www.diy-tool.com/fs/diy/ToCart.html" style="display:none;">
+<input type="hidden" name="url" value="/fs/diy/x01-6528" />
+<input type="hidden" name="pagename" value="GoodsDetail" />
+<input type="hidden" name="goodsId" value="941991" />
+
+<div class="FS2_figure">
+<table border="0" cellspacing="2" cellpadding="0" class="FS2_figure_table">
+<tr>
+<td style="vertical-align:middle;" nowrap="nowrap" class="FS2_figure_table_td_figure">数量</td>
+<td style="vertical-align:middle;" class="FS2_figure_table_td_input_cnt"><input name="cnt" type="text" value="1" size="3" maxlength="16000" /></td>
+<td style="vertical-align:middle;" class="FS2_figure_table_td_cart_btn"><input type="submit" id="toCart" name="買い物カゴに入れる" /></td>
+</tr>
+</table>
+</div>
+</form> 
+
+<iframe NAME="nodisp" id="naiyo"  style="display:none"></iframe>
+-->
+<script type="text/javascript">
+function toCart(name){
+  $('#form-' + name).submit();
+}
+</script>
 
 <!-- 一旦今回はなれているuncderscorestemplateで。後々はReactに！ -->
 <script type="text/template" id="vic_modal_contents">
@@ -76,7 +101,7 @@
       <div class="right_contents">
         <h3 class="header-style01"><%= item.details.name %></h3>
         <div class="price">¥<%= item.details.price %></div>
-        <div class="btn btn-default vic add_item">カートに入れる</div>
+        <div class="btn btn-default vic add_item" onClick='toCart("<%= item.itemName %>")'>カートに入れる</div>
         <div class="description">
           <%= item.details.description %>
         </div>
