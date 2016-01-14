@@ -363,7 +363,7 @@ function initializeVic(){
 
     new Vic(items[i],$("#video-" + i));
 
-    //カート用隠しフォーム追加
+    //for cart form
     for(var j=0; items[i].length > j; j++){
       var form = $("<form>");
       shopCartConf.id = "form-" + items[i][j].itemName;
