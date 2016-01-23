@@ -15,9 +15,9 @@ var items = [
                 price: "1,980",
                 description: "説明：明るい場所～半日陰で育てます。日によく当てれば葉の色が濃く、大きな葉っぱに成長します。窓から少し離れた、部屋の中程でも管理できます。",
                 image: {
-                    thumbnail: './assets/images/02.jpg',
-                    small: './assets/images/02.jpg',
-                    large: './assets/images/02.jpg'
+                    thumbnail: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/02.jpg',
+                    small: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/02.jpg',
+                    large: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/02.jpg'
                 },
                 item_id: 11
             },
@@ -56,9 +56,9 @@ var items = [
                 price: "1,980",
                 description: "説明：明るい場所～半日陰で育てます。日によく当てれば葉の色が濃く、大きな葉っぱに成長します。窓から少し離れた、部屋の中程でも管理できます。",
                 image: {
-                    thumbnail: './assets/images/02.jpg',
-                    small: './assets/images/02.jpg',
-                    large: './assets/images/02.jpg'
+                    thumbnail: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/02.jpg',
+                    small: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/02.jpg',
+                    large: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/02.jpg'
                 },
                 item_id: 11
             },
@@ -98,9 +98,9 @@ var items = [
                 price: "9,800",
                 description: "木とアイアンのシンプルなブックスタンド。A4サイズや雑誌サイズまでがぴったり収まるサイズです。コンパクトでちょっとしたスペースで使いやすいサイズにしました。",
                 image: {
-                    thumbnail: './assets/images/01.jpg',
-                    small: './assets/images/01.jpg',
-                    large: './assets/images/01.jpg'
+                    thumbnail: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/01.jpg',
+                    small: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/01.jpg',
+                    large: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/01.jpg'
                 },
                 item_id: 11
             },

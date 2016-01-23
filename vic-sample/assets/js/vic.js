@@ -19,7 +19,7 @@ function Vic (items, $elem) {
     modal: _.template($('#vic_modal_contents').html()),
     selected_item: _.template($('#vic_selected_item').html())
   };
-  this.$pointer = $(".mouse");
+  this.$pointer = $(".vic-mouse");
 
   this.init();
 
@@ -129,7 +129,7 @@ Vic.prototype.createItemObjects = function () {
     var url = items[i].url;
     var distanceByFrameX = items[i].translateX / (items[i].duration * this.fps);
     var distanceByFrameY = items[i].translateY / (items[i].duration * this.fps);
-    var itemObj = $("<div>",{"id":itemName,"class":"itemPointer"});
+    var itemObj = $("<div>",{"id":itemName,"class":"vic-itemPointer"});
     itemObj.css({"top":top,"left":left ,"position": "absolute","margin": "20px","width": width,"height":height});
     //Jqueryデータを持たせる
     itemObj.data("startTime",startTime);
@@ -160,8 +160,10 @@ Vic.prototype.createItemObjects = function () {
     ////オブジェクトをクリックした時の挙動
     itemObj.on('click', items[i], function (evt) {
 
-      that.movieStop();
-      that.openModal(evt.data);
+      // that.movieStop();
+      // that.openModal(evt.data);
+      evt.data.selected = true;
+      that.renderSelectedItems();
 
     });
 
@@ -218,7 +220,9 @@ Vic.prototype.openModal = function (item) {
   $dom_modal.find('.add_item').on('click', function (evt) {
 
     item.selected = true;
-    target_obj.renderSelectedItems();
+    item.cartAdded = true;
+    //target_obj.renderSelectedItems();
+    target_obj.addCart(item);
 
   });
   $parent.append($dom_modal);
@@ -226,17 +230,23 @@ Vic.prototype.openModal = function (item) {
   return this;
 };
 
+Vic.prototype.addCart = function (item){
+  $('#form-' + item.itemName).submit();
+  console.log(item.itemName);
+  $('.layer_' + item.itemName).remove();
+}
 
 Vic.prototype.renderSelectedItems = function () {
 
   var selected_items = _.where(this.items, { selected: true });
+  // var added_items = _.where(this.items, { cartAdded: true });
   var that = this;
-  var $btn_area = this.$selected_item_wrap.find('.btn_area');
+  var $btn_area = this.$selected_item_wrap.find('.vic-btn_area');
   var $selected_items_area = this.$selected_item_wrap.find('.selected_item_area');
 
   $btn_area.empty();
   if ( selected_items.length > 0 ) {
-    $btn_area.html('<div class="btn btn-default add_to_cart"><a href='+ shopCartConf.cartUrl +' target="_blank">購入手続きへ進む</a></div>');
+    $btn_area.html('<div class="vic-btn vic-btn-default add_to_cart"><a href='+ shopCartConf.cartUrl +' target="_blank">購入手続きへ進む</a></div>');
     $btn_area.find('.add_to_cart').on('click', function (evt) {
     })
   } else {
@@ -256,9 +266,22 @@ Vic.prototype.renderSelectedItems = function () {
       });
     });
 
+    $node.on('click',selected_items[i], function (evt) {
+        that.movieStop();
+        that.openModal(evt.data);
+    });
+
     $selected_items_area.append($node);
 
   }
+
+  // for ( var i =0; added_items.length > i; i++ ) {
+  //   var $node = $(this.templates.selected_item({ item: added_items[i] }));
+  //   $node.find('.item_image_layer').each(function(){
+  //     console.log($(this));
+  //     $(this).remove();
+  //   });
+  // }
 
 };
 
@@ -386,6 +409,5 @@ function initializeVic(){
 window.onload = function () {
   initializeVic();
 };
-
 
 

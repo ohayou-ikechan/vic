@@ -7,22 +7,20 @@
   <link rel="stylesheet" type="text/css" href="assets/components/font-awesome/css/font-awesome.min.css">
   <script src="assets/js/jquery-1.11.3.min.js"></script>
   <script src="assets/components/underscore.js"></script>
-  <script src="assets/datas/items.js"></script>
-  <script src="assets/datas/shopCartConf.js"></script>
-  <script src="assets/js/vic.js"></script>
+  <script src="assets/js/vic.min.js"></script>
 </head>
 <body>
 <h1 class="title">ViC Premium Movies for Meetcal</h1>
 
-<div class="wrapper">
-  <div class="content">
+<div class="vic-wrapper">
+  <div class="vic-content">
 
     <div class="vic" id="video-0">
       <div class="video_wrap">
         <video preload="none" class="video" src="assets/videos/sample002.mp4" poster="assets/images/poster01.png" width="640" height="360"></video>
         <div class="controls">
-          <i class="btn btn-ico play fa fa-lg fa-play-circle-o"></i>
-          <i class="btn btn-ico pause fa fa-lg fa-stop-circle-o"></i>
+          <i class="vic-btn btn-ico play fa fa-lg fa-play-circle-o"></i>
+          <i class="vic-btn btn-ico pause fa fa-lg fa-stop-circle-o"></i>
         </div>
       </div>
 
@@ -30,7 +28,7 @@
         <div class="selected_item_area">
 
         </div>
-        <div class="btn_area">
+        <div class="vic-btn_area">
 
         </div>
       </div>
@@ -53,7 +51,7 @@
         <div class="selected_item_area">
 
         </div>
-        <div class="btn_area">
+        <div class="vic-btn_area">
 
         </div>
       </div>
@@ -83,11 +81,6 @@
 
 <iframe NAME="nodisp" id="naiyo"  style="display:none"></iframe>
 -->
-<script type="text/javascript">
-function toCart(name){
-  $('#form-' + name).submit();
-}
-</script>
 
 <!-- 一旦今回はなれているuncderscorestemplateで。後々はReactに！ -->
 <script type="text/template" id="vic_modal_contents">
@@ -101,11 +94,11 @@ function toCart(name){
       <div class="right_contents">
         <h3 class="header-style01"><%= item.details.name %></h3>
         <div class="price">¥<%= item.details.price %></div>
-        <div class="btn btn-default vic add_item" onClick='toCart("<%= item.itemName %>")'>カートに入れる</div>
+        <div class="vic-btn vic-btn-default vic add_item" onClick='toCart("<%= item.itemName %>")'>カートに入れる</div>
         <div class="description">
           <%= item.details.description %>
         </div>
-        <i class="btn btn-ico fa fa-lg fa-times-circle-o close"></i>
+        <i class="vic-btn btn-ico fa fa-lg fa-times-circle-o close"></i>
       </div>
     </div>
   </div>
@@ -114,10 +107,10 @@ function toCart(name){
 <script type="text/template" id="vic_selected_item">
   <div class="selected_item">
     <img src="<%= item.details.image.small %>" alt="placeholder" width="120" height="120"/>
-    <i class="btn btn-ico fa fa-lg fa-times-circle-o unselect"></i>
+    <i class="vic-btn btn-ico fa fa-lg fa-times-circle-o unselect"></i>
   </div>
 </script>
 
-<img class="mouse" src="assets/images/pointer.gif" width="30" height="30" />
+<img class="vic-mouse" src="assets/images/pointer.gif" width="30" height="30" />
 </body>
 </html>
