@@ -4,28 +4,28 @@ var items = [
 	[
 		{
 			itemName: "item1",
-			top: 170,
-			left: 260,
-			width: 75,
-			height: 100,
-			startTime: 0.5,
+			top: 10,
+			left: 330,
+			width: 133,
+			height: 289,
+			startTime: 0,
 			url: "http://amzn.to/1Si7qIT",
             details: {
-                name: "サンセベリア",
-                price: "1,980",
-                description: "説明：明るい場所～半日陰で育てます。日によく当てれば葉の色が濃く、大きな葉っぱに成長します。窓から少し離れた、部屋の中程でも管理できます。",
+                name: "驚くほどのストレッチ！美脚ストレートパンツ",
+                price: "1,900",
+                description: "膝位置高めで脚長効果抜群。内側ボタン式だからウエストすっきり。素材	レーヨン77%・ナイロン20%・ポリウレタン3%  <br>モデル:身長：168cm/Sサイズ",
                 image: {
-                    thumbnail: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/02.jpg',
-                    small: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/02.jpg',
-                    large: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/02.jpg'
+                    thumbnail: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/item.jpg',
+                    small: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/item.jpg',
+                    large: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/item8.jpg'
                 },
                 item_id: 11
             },
-			translateX: -160,
+			translateX: 0,
 			translateY: 0,
 			duration: 3,
 			tag:{
-				text:"観葉植物<br>¥1,980",
+				text:"ストレートパンツ<br>¥1,900",
 				css:{
 					"font-family": "NotoSansCJKjp-Bold",
 					color: "white",

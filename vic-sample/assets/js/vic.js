@@ -99,6 +99,7 @@ Vic.prototype.pointerPlay_ = function(){
           }
         }
         doRender();
+        $("#timeDisplay").text(vid.currentTime);
       }else{
 
         me.started = false;
