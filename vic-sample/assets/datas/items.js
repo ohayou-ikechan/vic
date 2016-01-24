@@ -23,7 +23,7 @@ var items = [
             },
 			translateX: 0,
 			translateY: 0,
-			duration: 3,
+			duration: 5,
 			tag:{
 				text:"ストレートパンツ<br>¥1,900",
 				css:{
