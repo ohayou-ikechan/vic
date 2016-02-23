@@ -3,6 +3,8 @@
 function Vic (items, $elem) {
 
   this.fps = 40;
+  this.standardWidth = 640;
+  this.standardHeight = 360;
   this.items = items;
   this.$el = $elem;
   this.$video = this.$el.find('video');
@@ -120,18 +122,22 @@ Vic.prototype.createItemObjects = function () {
   for(var i=0; items.length > i; i++){
 
     var itemName = items[i].itemName;
+    // console.log($(".video").attr("height"));
     //console.log(item.top + ":----------------------:" + videoObj.position().top);
-    var top = items[i].top;
-    var left = items[i].left;
-    var width = items[i].width;
-    var height = items[i].height;
+    var top = items[i].top * $(".video").attr("height") / this.standardHeight; //標準高さを基準にして、動画高に合わせた座標を指定する
+    console.log("original height::::" + $(".video").attr("height"));
+    console.log("original top::::" + items[i].top);
+    console.log("top::::" + top);
+    var left = items[i].left * $(".video").attr("width") / this.standardWidth;
+    var width = items[i].width * $(".video").attr("width") / this.standardWidth;
+    var height = items[i].height * $(".video").attr("height") / this.standardHeight;
     var startTime = items[i].startTime;
     var endTime = items[i].startTime + items[i].duration;
     var url = items[i].url;
     var distanceByFrameX = items[i].translateX / (items[i].duration * this.fps);
     var distanceByFrameY = items[i].translateY / (items[i].duration * this.fps);
     var itemObj = $("<div>",{"id":itemName,"class":"vic-itemPointer"});
-    itemObj.css({"top":top,"left":left ,"position": "absolute","margin": "20px","width": width,"height":height});
+    itemObj.css({"top":top,"left":left ,"position": "absolute","width": width,"height":height});
     //Jqueryデータを持たせる
     itemObj.data("startTime",startTime);
     itemObj.data("endTime",endTime);
@@ -220,7 +226,7 @@ Vic.prototype.openModal = function (item) {
 
   $dom_modal.find('.add_item').on('click', function (evt) {
 
-    item.selected = true;
+    item.selected = false;
     item.cartAdded = true;
     //target_obj.renderSelectedItems();
     target_obj.addCart(item);
@@ -234,19 +240,21 @@ Vic.prototype.openModal = function (item) {
 Vic.prototype.addCart = function (item){
   $('#form-' + item.itemName).submit();
   console.log(item.itemName);
-  $('.layer_' + item.itemName).remove();
+  //$('.layer_' + item.itemName).css('background-color', 'rgba(0,0,0,0.5)').append('<div class="layer_inner"><i class="icon-cart"></i></div>');
+  //$('.layer_' + item.itemName).append('<i class="icon-cart"></i>');
+  this.renderSelectedItems();
 }
 
 Vic.prototype.renderSelectedItems = function () {
 
   var selected_items = _.where(this.items, { selected: true });
-  // var added_items = _.where(this.items, { cartAdded: true });
+  var added_items = _.where(this.items, { cartAdded: true });
   var that = this;
   var $btn_area = this.$selected_item_wrap.find('.vic-btn_area');
   var $selected_items_area = this.$selected_item_wrap.find('.selected_item_area');
 
   $btn_area.empty();
-  if ( selected_items.length > 0 ) {
+  if ( selected_items.length > 0 ||  added_items.length > 0 ) {
     $btn_area.html('<div class="vic-btn vic-btn-default add_to_cart"><a href='+ shopCartConf.cartUrl +' target="_blank">購入手続きへ進む</a></div>');
     $btn_area.find('.add_to_cart').on('click', function (evt) {
     })
@@ -272,17 +280,31 @@ Vic.prototype.renderSelectedItems = function () {
         that.openModal(evt.data);
     });
 
+    $node.on('mouseenter', selected_items[i], function (evt) {
+      //$(this).find('.item_image_layer').append('<div class="layer_inner"><i class="icon-detail"></i></div>');
+      $(this).find('.item_image_layer').css('background-color', 'rgba(0,0,0,0.5)').append('<div class="layer_inner"><i class="icon-detail"></i></div>');
+
+    });
+
+    $node.on('mouseleave', selected_items[i], function (evt) {
+      //$(this).find('.item_image_layer').append('<div class="layer_inner"><i class="icon-detail"></i></div>');
+      $(this).find('.item_image_layer').css('background-color', '').empty();
+
+    });
+
     $selected_items_area.append($node);
 
   }
 
-  // for ( var i =0; added_items.length > i; i++ ) {
-  //   var $node = $(this.templates.selected_item({ item: added_items[i] }));
-  //   $node.find('.item_image_layer').each(function(){
-  //     console.log($(this));
-  //     $(this).remove();
-  //   });
-  // }
+  for ( var i =0; added_items.length > i; i++ ) {
+    var $node = $(this.templates.selected_item({ item: added_items[i] }));
+    $node.find('.item_image_layer').each(function(){
+      console.log("000000000000000000");
+      console.log($(this));
+      $(this).css('background-color', 'rgba(0,0,0,0.5)').append('<div class="layer_inner"><i class="icon-cart"></i></div>');
+    });
+    $selected_items_area.append($node);
+  }
 
 };
 

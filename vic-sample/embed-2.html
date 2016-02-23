@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ViC</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.embed.css">
+  <link rel="stylesheet" type="text/css" href="assets/components/font-awesome/css/font-awesome.min.css">
+  <script src="assets/js/jquery-1.11.3.min.js"></script>
+  <script src="assets/components/underscore.js"></script>
+  <script src="assets/js/vic.min-2.js"></script>
+</head>
+<body>
+	  <div class="vic-content">
+
+	    <div class="vic" id="video-0">
+	      <div class="video_wrap">
+	        <video preload="auto" class="video" src="http://s3-ap-northeast-1.amazonaws.com/vic-video/yumetenbo/duffel640.mp4" poster="assets/images/poster002.png" width="640" height="360"></video>
+	        <div class="controls">
+	          <i class="vic-btn btn-ico play fa fa-lg fa-play-circle-o"></i>
+	          <i class="vic-btn btn-ico pause fa fa-lg fa-stop-circle-o"></i>
+	        </div>
+	      </div>
+
+	      <div class="selected_item_wrap">
+	        <div class="selected_item_area">
+
+	        </div>
+	        <div class="vic-btn_area">
+
+	        </div>
+	      </div>
+<!--  	      <div id="timeDisplay"></div>
+	      <div id='console'></div> -->
+	    </div>
+	  </div>
+
+	<script type="text/template" id="vic_modal_contents">
+	  <div class="modal_wrap">
+	    <div class="modal">
+	      <div class="left_contents">
+	        <div class="item_img left_contents">
+	          <img src="<%= item.details.image.small %>" alt="placeholder" width="200" height="200"/>
+	        </div>
+	      </div>
+	      <div class="right_contents">
+	        <h3 class="header-style01"><%= item.details.name %></h3>
+	        <div class="price">¥<%= item.details.price %></div>
+	        <div class="vic-btn vic-btn-default vic add_item">カートに入れる</div>
+	        <div class="description">
+	          <%= item.details.description %>
+	        </div>
+	        <i class="vic-btn btn-ico fa fa-lg fa-times-circle-o close"></i>
+	      </div>
+	    </div>
+	  </div>
+	</script>
+
+	<script type="text/template" id="vic_selected_item">
+	  <div class="selected_item">
+	    <img src="<%= item.details.image.small %>" alt="placeholder" width="120" height="120"/>
+	    <!-- <i class="vic-btn btn-ico fa fa-lg fa-times-circle-o unselect"></i> -->
+	    <div class="item_image_layer layer_<%= item.itemName %>"></div>
+	  </div>
+	</script>
+
+	<img class="vic-mouse" src="assets/images/pointer.gif" width="30" height="30" />
+</body>
+</html>

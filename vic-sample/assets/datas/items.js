@@ -15,9 +15,9 @@ var items = [
                 price: "1,900",
                 description: "膝位置高めで脚長効果抜群。内側ボタン式だからウエストすっきり。素材	レーヨン77%・ナイロン20%・ポリウレタン3%  <br>モデル:身長：168cm/Sサイズ",
                 image: {
-                    thumbnail: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/item.jpg',
-                    small: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/item.jpg',
-                    large: 'http://s3-ap-northeast-1.amazonaws.com/vic-video/parco/assets/images/item8.jpg'
+                    thumbnail: 'http://www.dreamvs.jp/images/article/519935/519935-05.jpg',
+                    small: 'http://www.dreamvs.jp/images/article/519935/519935-05.jpg',
+                    large: 'http://www.dreamvs.jp/images/article/519935/519935-05.jpg'
                 },
                 item_id: 11
             },
@@ -25,7 +25,7 @@ var items = [
 			translateY: 0,
 			duration: 5,
 			tag:{
-				text:"ストレートパンツ<br>¥1,900",
+				text:"",
 				css:{
 					"font-family": "NotoSansCJKjp-Bold",
 					color: "white",
